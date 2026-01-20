@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="http://municipalidad.cl/boti" />
+    <meta name="description" content="El chatbot de la Municipalidad." />
+    <meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="revision" href="http://municipalidad.cl/boti" />
+    <script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_config.callbacks.push({
+        ready: my_addtoany_onready,
+    });
+    function my_addtoany_onready() {
+        let addToAnyButtons = document.getElementsByClassName("add_to_any_button");
+        for(let i = 0; i < addToAnyButtons.length; i ++) {
+          addToAnyButtons[i].rel = "noreferrer";
+        }
+    }</script>
+
+    <title>BarneBT-Plus | Municipalidad - Asistente Virtual Municipal</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_tZj4bw0vP568-bKjfmuQ9zpaWbDoWOFgc0vvg0DFS0I.css" />
+    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" />
+    <link rel="stylesheet" media="all" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" />
+    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" />
+    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap" />
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_d23pbyofLtWAwMXoHPm1golY8Hnq2NL5bEn2dfisT6M.css" />
+    
+    <style>
+      /* Estilos para degradados municipales */
+      .header-gradient {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7aa8d1 100%);
+        color: white;
+        padding: 2rem 0;
+      }
+      
+      .hero-section {
+        background: linear-gradient(180deg, rgba(30, 60, 114, 0.95) 0%, rgba(42, 82, 152, 0.9) 50%, rgba(122, 168, 209, 0.85) 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+      }
+      
+      .section-title-gradient {
+        background: linear-gradient(90deg, #2a5298 0%, #6bacdb 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+      
+      .section-title-gradient h2 {
+        color: white;
+        margin: 0;
+      }
+      
+      .btn-primary-gradient {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        border: none;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 0.8rem 2.5rem;
+      }
+      
+      .btn-primary-gradient::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s ease;
+      }
+      
+      .btn-primary-gradient:hover::before {
+        left: 100%;
+      }
+      
+      .btn-primary-gradient:hover {
+        background: linear-gradient(135deg, #2a5298 0%, #3d6cb9 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(30, 60, 114, 0.4), 
+                    0 0 20px rgba(42, 82, 152, 0.2);
+        letter-spacing: 0.5px;
+      }
+      
+      .btn-primary-gradient:active {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 12px rgba(30, 60, 114, 0.3);
+      }
+      
+      /* Animación de pulso */
+      @keyframes pulse-glow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(42, 82, 152, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(42, 82, 152, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(42, 82, 152, 0);
+        }
+      }
+      
+      @keyframes bounce-in {
+        0% {
+          transform: scale(0.95);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes wiggle {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(2deg); }
+        75% { transform: rotate(-2deg); }
+      }
+      
+      .btn-primary-gradient-pulse {
+        animation: pulse-glow 2s infinite, bounce-in 0.6s ease-out;
+      }
+      
+      .btn-primary-gradient:hover .btn-icon {
+        animation: wiggle 0.6s ease-in-out;
+      }
+      
+      /* Icono animado */
+      .btn-icon {
+        display: inline-block;
+        margin-right: 0.5rem;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-primary-gradient:hover .btn-icon {
+        transform: scale(1.2) rotate(10deg);
+      }
+      
+      /* Ripple effect al clickear */
+      .btn-primary-gradient::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+      
+      .card-gradient {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border: none;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+      
+      .card-gradient:hover {
+        box-shadow: 0 10px 30px rgba(42, 82, 152, 0.15);
+        transform: translateY(-5px);
+      }
+      
+      .footer-gradient {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+      }
+      
+      .highlight-box {
+        background: linear-gradient(135deg, #e0f7ff 0%, #e8f5ff 100%);
+        border-left: 5px solid #2a5298;
+        padding: 1.5rem;
+        border-radius: 6px;
+        margin: 1.5rem 0;
+      }
+      
+      .highlight-box strong {
+        color: #1e3c72;
+      }
+      
+      /* Mejorar la visibilidad del título principal */
+      h1.mb-3 {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+      }
+      
+      .lead {
+        color: #2a5298;
+        font-weight: 600;
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WRB24B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WRB24B');</script>
+
+  <body class="layout-no-sidebars page-node-118650 path-node node--type-page">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      Pasar al contenido principal
+    </a>
+
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      <div id="page-wrapper">
+        <div id="page">
+
+          <header id="header" class="header-gradient navbar navbar-light search-active" role="banner" aria-label="Encabezado del sitio">
+            <div class="container">
+              <a href="/" target="_blank" title="Inicio" rel="home" class="navbar-brand">
+                <img src="/themes/custom/obelisco/logo.svg" alt="Inicio" class="header-logo" />
+              </a>
+
+              <div class="navbar-search">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav nav-pills">
+                    <li class="nav-item">
+                      <a href="/" class="nav-link active">
+                        <span>Inicio</span>
+                      </a>
+                    </li>
+                    <li class="nav-item d-responsive">
+                      <div class="navbar-search">
+                        <form class="form-search form-search-sm" action='/bweb' method='GET'>
+                          <div class="form-group">
+                            <input
+                              type="search"
+                              class="form-control form-control-sm input-search"
+                              id="header-search-2"
+                              name="keys"
+                              placeholder="Buscar..."
+                              aria-label="Ingrese su búsqueda"
+                              maxlength='100'
+                            />
+                            <button class="reset" type="reset"></button>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <div class="highlighted">
+            <aside class="container section clearfix" role="complementary">
+              <div data-drupal-messages-fallback class="hidden"></div>
+            </aside>
+          </div>
+
+          <div id="main-wrapper">
+            <div id="main">
+              <main class="main-content" id="content" role="main">
+                <section class="section">
+                  <a id="main-content" class="sr-only" tabindex="-1"></a>
+
+                  <div id="block-obelisco-content" class="block block-system block-system-main-block">
+                    <div class="content">
+                      <article role="article" about="/servicios/boti" class="node node--type-page node--view-mode-full clearfix pt-4 pb-3 mb-5">
+                        <header></header>
+
+                        <div class="node__content clearfix">
+                          <div class="_none pt-4"><div class="container">
+                            <div class="layout row layout-builder__layout">
+                              <div class="col-12">
+                                <div class="_none block block-system block-system-breadcrumb-block">
+                                  <div class="content">
+                                    <nav role="navigation" aria-label="breadcrumb">
+                                      <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                          <a href="/">Inicio</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                          <a href="/servicios">Servicios</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                          <a href="/servicios/boti">BarneBT-Plus</a>
+                                        </li>
+                                      </ol>
+                                    </nav>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div></div>
+
+                          <div class="hero-section"><div class="container">
+                            <div class="layout row layout-builder__layout">
+                              <div class="col-lg-8 col-md-8 col-12">
+                                <div class="_none block block-layout-builder block-field-blocknodepagetitle">
+                                  <div class="content">
+                                    <h1 class="mb-3">BarneBT-Plus</h1>
+                                  </div>
+                                </div>
+
+                                <div class="_none block block-layout-builder block-field-blocknodepagefield-summary">
+                                  <div class="content">
+                                    <p class="lead">Asistente virtual municipal — atención remota</p>
+                                  </div>
+                                </div>
+
+                                <div class="_none mt-4 d-flex flex-row">
+                                  <span>Compartir en redes</span>
+                                  <ul class="a2a_kit a2a_kit_size_24 list-inline ml-2" data-a2a-url="http://municipalidad.cl/servicios/boti" data-a2a-title="BarneBT-Plus">
+                                    <li class="list-inline-item mr-1"><a class="add_to_any_button a2a_button_facebook"><i class="bx bxl-facebook-circle bx-sm" ></i></a></li>
+                                    <li class="list-inline-item mr-1"><a class="add_to_any_button a2a_button_twitter"><i class="bx bxl-twitter bx-sm" ></i></a></li>
+                                    <li class="list-inline-item mr-1"><a class="add_to_any_button a2a_button_linkedin"><i class="bx bxl-linkedin-square bx-sm"></i></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-12"></div>
+                            </div>
+                          </div></div>
+
+                          <div class="_none pt-4 pb-5"><div class="container">
+                            <div class="layout row layout-builder__layout">
+                              <div class="col-lg-8 col-md-8 col-12">
+                                <div class="_none block block-layout-builder block-field-blocknodepagebody">
+                                  <div class="content">
+                                    <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                                      <div class="highlight-box">
+                                        <p><strong>La Municipalidad de Chile</strong> implementó BarneBT-Plus, un asistente virtual accesible a través de WhatsApp, para mejorar la comunicación con sus ciudadanos. Esta plataforma revolucionó la atención remota al brindar una experiencia simple, única y personalizada a través de la aplicación de mensajería más utilizada del país.</p>
+                                      </div>
+
+                                      <p><span><span><span><span><span><span>BarneBT-Plus se consolidó rápidamente como uno de los canales preferidos por los vecinos para acceder a información municipal, solicitar trámites, agendar citas y resolver consultas de manera rápida y sencilla, directamente desde sus celulares.</span></span></span></span></span></span></p>
+
+                                      <p><span><span><span><span><span><span>En 2024 incorporamos a BarneBT-Plus las últimas tecnologías de inteligencia artificial generativa basadas en grandes modelos de lenguaje (LLM) para ofrecer una nueva experiencia conversacional sobre servicios municipales. Ahora puede responder consultas de manera personalizada con información a medida, según los intereses de los usuarios, tanto en español como en inglés.</span></span></span></span></span></span></p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="_none block block-layout-builder block-field-blocknodepagefield-content">
+                                  <div class="content">
+                                    <div class="field field--name-field-content field--type-entity-reference-revisions field--label-hidden field__items">
+                                      <div class="field__item mt-4">
+                                        <div class="paragraph paragraph--type--medio paragraph--view-mode--default">
+                                          <div class="field field--name-medio field--type-entity-reference field--label-hidden field__item">
+                                            <img src="/sites/default/files/styles/full_width/public/2024-08/barnebot-plus.jpg" alt="BarneBT-Plus" typeof="foaf:Image" />
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="field__item mt-4">
+                                        <div class="paragraph paragraph--type--paragraph paragraph--view-mode--default">
+                                          <div class="clearfix text-formatted field field--name-body field--type-text-long field--label-hidden field__items">
+                                            <div class="field__item">
+                                              <div class="section-title-gradient">
+                                                <h2>¿Qué servicios puedo consultar en BarneBT-Plus?</h2>
+                                              </div>
+
+                                              <p><span><span><span><span><span><span>Los contenidos disponibles en BarneBT-Plus son múltiples y están en constante actualización. Diariamente se incorporan nuevos servicios municipales para acercar a las personas toda la información necesaria para hacer gestiones, resolver trámites, agendar citas, solicitar permisos y conocer las propuestas culturales disponibles.</span></span></span></span></span></span></p>
+
+                                              <div class="card-gradient p-3 mb-3">
+                                                <p><strong>📋 Servicios Disponibles:</strong></p>
+                                                <p><span><span><span><span><span><span>Permisos de circulación, licencias de conducir, patentes, permisos de construcción, avisos de acera, poda de árboles, recolección de basura y servicios de alcantarillado.</span></span></span></span></span></span></p>
+                                              </div>
+
+                                              <p><span><span><span><span><span><span>También permite realizar denuncias sobre estacionamientos ilegales, daños en vías públicas y disturbios, enviando evidencia fotográfica que el sistema reconoce e identifica automáticamente.</span></span></span></span></span></span></p>
+
+                                              <div class="card-gradient p-3 mb-3">
+                                                <p><strong>🛠️ Solicitudes Especiales:</strong></p>
+                                                <p><span><span><span><span><span><span>Servicios de reparación de calles, reporte de alumbrado público defectuoso, solicitudes de poda de árboles, retiro de escombros, autorización de eventos comunitarios, y consultas sobre impuestos municipales.</span></span></span></span></span></span></p>
+                                              </div>
+
+                                              <p><span><span><span><span><span><span>Además, el chatbot brinda información sobre servicios de salud municipal, programas de capacitación, actividades culturales y eventos de la comunidad.</span></span></span></span></span></span></p>
+
+                                              <p><span><span><span><span><span><span>También es posible agendar citas para trámites municipales como renovación de permisos, consultas en oficinas de atención ciudadana, o para participar en programas comunitarios.</span></span></span></span></span></span></p>
+
+                                              <div class="section-title-gradient">
+                                                <h2>¿Cómo puedo chatear con BarneBT-Plus?</h2>
+                                              </div>
+
+                                              <p><span><span><span><span><span><span>Para comenzar una conversación, solo hay que agendar el número de WhatsApp de la Municipalidad. Al escribirle "Hola", BarneBT-Plus se presenta y se pone a disposición para resolver dudas y consultas vinculadas a los diversos servicios municipales.</span></span></span></span></span></span></p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="field__item mt-4">
+                                        <button onclick="window.open('https://wa.me/56912345678?text=Hola%20BarneBT-Plus', '_blank')" type="button" class="btn btn-primary btn-primary-gradient btn-lg btn-primary-gradient-pulse">
+                                          <span class="btn-icon">💬</span>
+                                          <span>Inicia conversación con BarneBT-Plus</span>
+                                        </button>
+                                      </div>
+
+                                      <div class="field__item mt-4">
+                                        <div class="paragraph paragraph--type--attached paragraph--view-mode--default">
+                                          <div class="field field--name-title field--type-string field--label-hidden field__item">
+                                            <h3 class='mb-4'>Descargar informe</h3>
+                                          </div>
+                                          <div class="field field--name-media field--type-entity-reference field--label-hidden field__items">
+                                            <div class="field__item">
+                                              <h4 class="list-link-item-title">Caso_BarneBT-Plus.pdf</h4>
+                                              <a class="btn btn-secondary btn-sm download-link card-link"
+                                                href="https://municipalidad.cl/sites/default/files/2025-07/Caso_BarneBT_Plus.pdf"
+                                                target="_blank"
+                                                download
+                                                rel="noreferrer">
+                                                📥 Descargar
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-12"></div>
+                            </div>
+                          </div></div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </section>
+              </main>
+            </div>
+          </div>
+
+          <footer class="main-footer footer-gradient">
+            <div class="container">
+              <section>
+                <h4>Teléfonos útiles</h4>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="tel:1313">1313 - Carabineros</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="tel:131">131 - Bomberos</a>
+                  </li>
+                  <li class="list-inline-item"><a href="tel:133">133 - Policía Investigaciones</a></li>
+                  <li class="list-inline-item"><a href="tel:122">122 - Ambulancia SAMU</a></li>
+                  <li class="list-inline-item">
+                    <a href="tel:1455">1455 - Violencia Intrafamiliar</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="tel:147">147 - Atención Ciudadana Municipal</a>
+                  </li>
+                </ul>
+              </section>
+
+              <section>
+                <h4>Redes de la Municipalidad</h4>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="https://www.facebook.com/municipalidad">
+                      <i class="bx bxl-facebook-circle"></i>Facebook
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.instagram.com/municipalidad/">
+                      <i class="bx bxl-instagram-alt"></i>Instagram
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://twitter.com/municipalidad">
+                      <i class="bx bxl-twitter"></i>Twitter
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.youtube.com/municipalidad">
+                      <i class="bx bxl-youtube"></i>YouTube
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="container">
+              <section class="footer-legal-section">
+                <div class="row align-items-center">
+                  <div class="col-12 col-md-5 col-xl-4 footer-content-img">
+                    <img
+                      class="d-lg-none"
+                      src="/themes/custom/obelisco/images/municipalidad-sm.png"
+                      alt="Logo de la Municipalidad" />
+                    <img
+                      class="d-none d-lg-inline"
+                      src="/themes/custom/obelisco/images/municipalidad.png"
+                      alt="Logo de la Municipalidad" />
+                  </div>
+                  <div class="col-12">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="https://municipalidad.cl/transparencia">Diario Oficial</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://municipalidad.cl/terminos-condiciones">Términos y condiciones</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://municipalidad.cl/privacidad">Política de privacidad</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://municipalidad.cl/transparencia">Transparencia</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="seccion_footer">
+                <div class="footer-license-text">
+                  Los contenidos de municipalidad.cl están licenciados bajo
+                  Creative Commons Reconocimiento 4.0 Internacional.
+                </div>
+              </section>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/118650","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"}}</script>
+    <script src="/sites/default/files/js/js_qAM_ZZFBPaBMRoM_5Hz4VnoxsVG5cWBPhhrZNsu_AKY.js"></script>
+    <script src="https://static.addtoany.com/menu/page.js" async></script>
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+  </body>
+</html>

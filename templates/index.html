@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>BarneBT-Plus | Municipalidad</title>
+
+  <link rel="stylesheet" media="all" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" />
+  <link rel="stylesheet" media="all"
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900&display=swap" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #8457d2 0%, #2e07f1 50%, #d05cda76 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgb(39, 118, 96);
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      
+    }
+
+    .logo-section {
+      flex: 0 0 35%;
+      background: linear-gradient(135deg, #f1f1f1c3 0%, #fafdff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .logo-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logo-placeholder:hover {
+      transform: scale(1.05);
+    }
+
+    .content-section {
+      flex: 1;
+      padding: 3rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      background: linear-gradient(135deg, #000000 0%, #000000 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+      cursor: pointer;
+    }
+
+    .subtitle {
+      color: #000000;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .description {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary-gradient {
+      background: linear-gradient(135deg, #1c008ac7 0%, #0d3b66 100%);
+      border: none;
+      color: white;
+      padding: 0.8rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      align-self: center;
+    }
+
+    .btn-primary-gradient::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary-gradient:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary-gradient:hover {
+      background: linear-gradient(135deg, #3f39ddcc 0%, #0a2f51 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(14, 17, 215, 0.4), 0 0 20px rgba(236, 23, 140, 0.2);
+      letter-spacing: 0.5px;
+    }
+
+    .btn-primary-gradient:active {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(45, 106, 79, 0.3);
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(45, 106, 79, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(45, 106, 79, 0);
+      }
+    }
+
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .btn-primary-gradient-pulse {
+      animation: pulse-glow 2s infinite, bounce-in 0.6s ease-out;
+    }
+
+    .btn-icon {
+      display: inline-block;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary-gradient:hover .btn-icon {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .logo-section {
+        flex: 0 0 auto;
+        padding: 2rem;
+      }
+
+      .logo-image {
+        max-width: 120px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        
+      }
+    }
+    .logo-placeholder{
+    
+      background: rgb(0, 224, 228);
+    }
+    
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo-section">
+      <div class="logo-placeholder" onclick="hablarBienvenida()">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.IBT_zSXA2-wlnimVUtiLqgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="BarneBT-Plus Logo" class="logo-image" />
+      </div>
+    </div>
+
+    
+    <div class="content-section">
+      <h1>BarneBT-Plus</h1>
+      <p class="subtitle">Asistente Virtual Municipal</p>
+
+      <p class="description">
+        Resuelve tus consultas, solicita trámites y obtén información municipal de forma instantánea a través de
+        WhatsApp.
+      </p>
+
+         <button onclick="window.open('https://wa.me/56912345678?text=Hola%20BarneBT-Plus', '_blank')"
+            class="btn-primary-gradient btn-primary-gradient-pulse">
+            <span class="btn-icon"></span>
+            <span>Inicia conversación con BarneBT-Plus</span>
+          </button>
+    </div>
+  </div>
+
+  <script>
+    // Función para que hable el asistente
+    function hablarBienvenida() {
+      const mensaje = "Bienvenido a BarneBT-Plus, tu asistente virtual municipal. Puedes decirme qué necesitas y te ayudaré.";
+      hablar(mensaje);
+    }
+
+    // Función general para hablar
+    function hablar(texto) {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-AR';
+      utterance.rate = 0.95;
+      utterance.pitch = 1.1;
+      utterance.volume = 1;
+
+      utterance.onstart = function () {
+        console.log('🤖 BarneBT-Plus está hablando...');
+      };
+
+      utterance.onend = function () {
+        console.log('✅ BarneBT-Plus terminó de hablar');
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Función para reconocimiento de voz
+    function iniciarReconocimiento() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      if (!SpeechRecognition) {
+        hablar("Lo siento, tu navegador no soporta reconocimiento de voz. Por favor, usa Chrome, Edge o Firefox.");
+        return;
+      }
+
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'es-AR';
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onstart = function () {
+        console.log(' Escuchando...');
+        hablar("Estoy escuchándote. Cuéntame qué necesitas.");
+      };
+
+      recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript.toLowerCase();
+        console.log('Dijiste:', transcript);
+
+        if (transcript.includes('hola') || transcript.includes('buenos')) {
+          hablar("¡Hola! Soy BarneBT-Plus, tu asistente virtual. Estoy aquí para ayudarte con trámites y consultas municipales.");
+        } else if (transcript.includes('trámite') || transcript.includes('solicitud')) {
+          hablar("Genial. Puedo ayudarte sin esperas. ¿Cuál necesitas?");
+        } else if (transcript.includes('rápido') || transcript.includes('rapido') || transcript.includes('urgente')) {
+          hablar("Te entiendo. Todos nuestros trámites son rápidos y sin esperas. ¿Qué necesitas?");
+        } else if (transcript.includes('tiempo') || transcript.includes('espera')) {
+          hablar("No te preocupes, conmigo no pierdes tiempo. Abre WhatsApp y comencemos ahora mismo.");
+        } else if (transcript.includes('información') || transcript.includes('info')) {
+          hablar("Tengo información sobre servicios municipales, horarios de atención, y más. ¿En qué puedo ayudarte?");
+        } else if (transcript.includes('whatsapp') || transcript.includes('chat')) {
+          hablar("Perfecto, te voy a abrir WhatsApp para conversar cómodamente.");
+          setTimeout(() => {
+            window.open('https://wa.me/56912345678?text=Hola%20BarneBT-Plus', '_blank');
+          }, 1500);
+        } else if (transcript.includes('ayuda') || transcript.includes('help')) {
+          hablar("Puedo ayudarte con consultas municipales, información de servicios, y conectarte por WhatsApp. ¿Qué necesitas?");
+        } else {
+          hablar("Entendí que dijiste: " + transcript + ". ¿Cuál es tu consulta municipal?");
+        }
+      };
+
+      recognition.onerror = function (event) {
+        hablar("Disculpa, no pude entender. Por favor intenta de nuevo.");
+        console.error('Error de reconocimiento:', event.error);
+      };
+
+      recognition.start();
+    }
+
+    // Ejecutar cuando la página carga
+    window.addEventListener('load', function () {
+      setTimeout(hablarBienvenida, 800);
+    });
+
+    // Permitir que hable nuevamente al hacer clic en el título
+    document.querySelector('h1').addEventListener('click', function () {
+      hablarBienvenida();
+    });
+
+    
+    
+  </script>
+</body>
+
+</html>
