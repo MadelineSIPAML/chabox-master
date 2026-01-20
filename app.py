@@ -1,7 +1,6 @@
 """Aplicacion Flask para el chatbot ChaBox."""
 
 from __future__ import annotations
-
 import logging
 import os
 import sys
@@ -12,9 +11,6 @@ import google.generativeai as genai
 
 # Cargar variables de entorno
 load_dotenv()
-
-# Agregar el directorio actual al path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -52,7 +48,6 @@ def create_app():
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key')
     app.config['JSON_AS_ASCII'] = False
     
-    # Definir rutas DENTRO de create_app
     @app.route('/', methods=['GET'])
     def health():
         return jsonify({'status': 'ok', 'message': 'ChaBox running'}), 200
@@ -73,7 +68,7 @@ def create_app():
             
             # Generar respuesta con Gemini
             response = model.generate_content(incoming_msg)
-            reply_text = response.text[:160]  # Limitar a 160 caracteres
+            reply_text = response.text[:160]
             
             logger.info(f"🤖 Respuesta Gemini: {reply_text}")
             
@@ -102,46 +97,26 @@ def create_app():
             'mensaje': 'Sistema listo'
         }), 200
     
-    try:
-        # Importar modelos y utilidades
-        from models.tramite import Tramite
-        
-        # Crear tabla al iniciar
-        logger.info("Creando tabla de trámites...")
-        Tramite.crear_tabla()
-        logger.info("Tabla de trámites lista")
-        
-        # Registrar blueprints
-        from routes import main_bp, tramite_bp, whatsapp_bp
-        app.register_blueprint(main_bp)
-        app.register_blueprint(tramite_bp)
-        app.register_blueprint(whatsapp_bp)
-        
-        logger.info("Rutas registradas correctamente")
-    except Exception as e:
-        logger.error(f"Error durante la inicialización: {e}")
-        raise
+    # ❌ COMENTADO: No usar MySQL en Render (sin base de datos)
+    # try:
+    #     from models.tramite import Tramite
+    #     logger.info("Creando tabla de trámites...")
+    #     Tramite.crear_tabla()
+    #     logger.info("Tabla de trámites lista")
+    #     
+    #     from routes import main_bp, tramite_bp, whatsapp_bp
+    #     app.register_blueprint(main_bp)
+    #     app.register_blueprint(tramite_bp)
+    #     app.register_blueprint(whatsapp_bp)
+    #     logger.info("Rutas registradas correctamente")
+    # except Exception as e:
+    #     logger.error(f"Error durante la inicialización: {e}")
     
     return app
 
 
-# Crear la aplicación para el servidor WSGI
 app = create_app()
 
 if __name__ == '__main__':
-    try:
-        print("\n" + "="*50)
-        print("ChaBox iniciando...")
-        print("="*50)
-        print("Servidor: http://localhost:5000")
-        print("Webhook: http://localhost:5000/webhook")
-        print("Test: http://localhost:5000/test")
-        print("="*50 + "\n")
-        
-        # En producción, usar puerto de la variable de entorno
-        port = int(os.getenv('PORT', 5000))
-        debug = os.getenv('FLASK_ENV', 'development') == 'development'
-        app.run(debug=debug, host='0.0.0.0', port=port)
-    except Exception as e:
-        logger.critical(f"No se pudo iniciar la aplicación: {e}")
-        sys.exit(1)
+    port = int(os.getenv('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
